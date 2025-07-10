@@ -1,114 +1,69 @@
-# Automatización de Pruebas LATAM – GreenSQA
+# Prueba Técnica - GreenSQA 
 
-Yahir Garzón Mayorga
+Este repositorio contiene un proyecto de automatización de pruebas funcionales para el sitio web de LATAM Airlines, usando `Behave` y `Selenium`.
 
+## Estructura del Proyecto
 
-
-\# Automatización de Pruebas LATAM – GreenSQA
-
-
-
-Este módulo automatiza el proceso de búsqueda de vuelos en el sitio web de LATAM utilizando Selenium + Behave (BDD).
-
-
-
----
-
-
-
-\## Herramientas utilizadas
-
-
-
-\- \*\*Selenium\*\*: Automatización del navegador
-
-\- \*\*Behave\*\*: Framework BDD con Gherkin
-
-\- \*\*Gherkin\*\*: Definición de escenarios
-
-\- \*\*ChromeDriver\*\* + Google Chrome
-
-
-
----
-
-
-
-\## Escenarios automatizados
-
-
-
-1\. Vuelo de solo ida  
-
-2\. Vuelo ida y regreso  
-
-3\. Búsqueda con datos inválidos  
-
-
-
-Cada escenario valida la apertura del sitio, ingreso de datos, fechas y resultados esperados.
-
-
-
----
-
-
-
-\## Cómo ejecutar pruebas
-
-
-
-Desde la raíz de la carpeta:
-
-
-
-cd latam\_automation
-
-python -m behave
-
-
-
-# Estructura de modulo
-
-
-
-latam\_automation/
-
+```
+latam-automation/
 ├── features/
-
-│   ├── buscar\_vuelo.feature
-
-│   └── steps/
-
-│       └── steps\_buscar\_vuelo.py
-
-├── reportes/
-
+│   ├── prueba_ida.feature
+│   ├── prueba_ida_vuelta.feature
+│   ├── steps/
+│   │   └── steps_comunes.py
+│   └── environment.py
+├── drivers/
+│   └── [WebDriver correspondiente]
 ├── requirements.txt
+└── README.md
+```
 
-└── venv/ (opcional)
+## Requisitos
 
+- Python 3.10 o superior
+- Google Chrome instalado
+- ChromeDriver correspondiente en la carpeta `drivers/`
 
+## Instalación
 
-# Instalación de dependencias
+1. Clona el repositorio:
 
+```bash
+git clone https://github.com/YayoyMatteo/green-sqa-prueba.git
+cd green-sqa-prueba/latam-automation
+```
 
+2. Crea un entorno virtual (opcional pero recomendado):
 
+```bash
+python -m venv venv
+source venv/bin/activate  # En Windows: venv\Scripts\activate
+```
+
+3. Instala las dependencias:
+
+```bash
 pip install -r requirements.txt
+```
 
+## Ejecución de Pruebas
 
+### 1. Búsqueda de vuelo solo ida:
 
-# Recomendaciones
+```bash
+python -m behave features/prueba_ida.feature
+```
 
+### 2. Búsqueda de vuelo ida y vuelta:
 
+```bash
+python -m behave features/prueba_ida_vuelta.feature
+```
 
-1. Asegúrese de tener Chrome instalado
+## Autor
 
+- 👤 [Yayoy Matteo](https://github.com/YayoyMatteo)
 
+## Licencia
 
-2\. El archivo ChromeDriver debe ser compatible con la versión de navegador
-
-
-
-3\. Ejecutar desde entorno virtual (venv: recomendado)
-
+Este proyecto es solo para fines de demostración técnica.
